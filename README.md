@@ -12,5 +12,3 @@ Change repositories.txt: create list of repositories for backing up.
 
 Run the scirpt: sh svn-backup.sh
 
-Happy backing up.
-
