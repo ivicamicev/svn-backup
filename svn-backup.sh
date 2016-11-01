@@ -14,9 +14,9 @@ list_repos="repositories.txt"
 
 echo "Start backing up"
 
-read_lines=`cat $list_repos`
-	for line in $read_lines ; do
-		svnadmin dump $repo_path/$line | gzip -9 > $backup_path/$line-$(date +"%Y-%m-%d-%T").dump.gz
+cat $list_repos | while read LINE
+	do
+		svnadmin dump $repo_path/$LINE | gzip -9 > $backup_path/$LINE-$(date +"%Y-%m-%d-%T").dump.gz
 	done
 
 echo "Finish"
